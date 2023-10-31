@@ -10,6 +10,12 @@ const startGame = (emoji) => {
     document.querySelector(".container .game").appendChild(box);
 }
 
+const updateScore = (value) => {
+    const currentValue = parseInt(document.querySelector("input.score").value);
+    document.querySelector("h6.score").innerHTML = currentValue + value;
+    document.querySelector("input.score").value = currentValue + value;
+}
+
 const onClickBox = (event) => {
     event.target.classList.add("boxOpen");
 
@@ -24,7 +30,10 @@ const onClickBox = (event) => {
                 boxes[1].classList.remove('boxOpen');
                 boxes[0].classList.remove('boxOpen');
 
+                updateScore(1);
+
                 if (document.querySelectorAll(".boxMatch").length === emojis.length) {
+                    alert("Congrats!! You clear the game");
                     window.location.reload();
                 }
             } else {

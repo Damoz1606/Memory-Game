@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
 
+:root {
+    --primary-color: #b0ff13;
+    --secondary-color: #232534;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +12,14 @@
 }
 
 body {
-    background-color: #FFBC13;
+    background-color: var(--primary-color);
     font-family: 'rubik', sans-serif;
 }
 
 .container {
     padding: 30px;
     width: 380px;
-    background-color: #232534;
+    background-color: var(--secondary-color);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -32,12 +37,20 @@ body {
     text-transform: uppercase;
 }
 
+.container h6 {
+    text-align: end;
+    letter-spacing: 2px;
+    color: white;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
 .container .reset-btn {
     all: unset;
     height: 40px;
     width: 120px;
-    background: #FFBC13;
-    color: #232534;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,6 +60,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 12px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -72,6 +86,7 @@ body {
     font-size: 25px;
     transition: all .25s;
     transform: rotateY(180deg);
+    border-radius: 5px !important;
 }
 
 .item.boxOpen {
@@ -82,10 +97,11 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: #FFBC13;
+    background: var(--primary-color);
     transition: all .25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
+    border-radius: 5px;
 }
 
 .boxOpen::after,
@@ -95,5 +111,5 @@ body {
 
 ::selection {
     background: white;
-    color: #232534;
+    color: var(--secondary-color);
 }
